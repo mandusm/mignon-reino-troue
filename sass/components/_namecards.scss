@@ -1,0 +1,92 @@
+/* --------------------------------------------------
+ ## COMPONENT: NAMECARDS
+-------------------------------------------------- */
+
+/* Namecard wrap
+---------------------------- */
+.namecard-wrap {
+	padding: $padding-section-small;
+	@include breakpoint(md) {
+		padding: $padding-section-tiny;
+	}
+	@include breakpoint(sm) {
+		padding: $padding-section-tiny*3;
+	}
+	@include breakpoint(xxs) { padding: 0; }
+}
+
+/* Namecard item
+---------------------------- */
+.namecard-item {
+	@extend .panel, .text-center;
+	padding: $padding-section-small;
+	box-shadow: 0 2px 1px rgba($gray-base, 0.05);
+	margin: $padding-section-base 0 0;
+	@include breakpoint(xxs) {
+		padding: 0;
+		margin: 15px;
+	}
+}
+
+/* Namecard header
+---------------------------- */
+.namecard-head {
+	@extend .panel-heading;
+	position: relative;
+	display: inline-block;
+	padding: 0;
+	top: -180px;
+	margin-bottom: -180px;	
+	background-color: $brand-primary;
+	overflow: hidden;
+	border-radius: 50%;
+	border: 13px solid $text-white;
+	> img { 
+		@include transition(0.15s); 
+	}
+	.social-links {
+		left: 10%; top: 10%;
+		position: absolute;
+		width: 80%;
+		height: 80%;
+		padding-top: 80px;
+		background: $bg-white;
+		border-radius: 50%;
+		> a { 
+			color: $text-color; 
+			> i { @include transition(0.15s); }
+			&:hover {
+				color: $brand-primary;
+				> i { @include translateY(-3px); }
+			}
+		}
+		@include scale(1.3);
+		@include transition(0.3s);
+		@include opacity(0.0);
+	}
+	&:hover {
+		> img {
+			@include opacity(0.3); 
+		}
+		.social-links {
+			@include scale(1.0);
+			@include opacity(1.0);
+		}
+	}
+	@include breakpoint(xxs) { display: none; }
+}
+
+/* Namecard body
+---------------------------- */
+.namecard-body {
+	@extend .panel-body;
+}
+
+/* Namecard footer
+---------------------------- */
+.namecard-foot {
+	@extend .panel-footer;
+	background: transparent;
+	border: 0;
+}
+

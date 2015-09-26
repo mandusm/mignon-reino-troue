@@ -1,0 +1,101 @@
+/* --------------------------------------------------
+ ## LAYOUT: NAVBAR
+-------------------------------------------------- */
+
+/* Default navbar
+---------------------------- */
+.navbar {
+	border-width: 0;
+	@extend .navbar-default;
+	.navbar-toggle {
+		color: $text-white;
+		font-size: 24px;
+		border-width: 2px;
+		padding: 0 11px;
+		margin: 15px 15px 0 0;
+		&:focus {
+			background-color: rgba($text-white,0.4);
+			border-color: transparent;
+			color: $brand-primary;
+		}
+		@include breakpoint(xxs) {
+			margin: 3px 10px 0 0;
+			border-width: 0;
+		}		
+	}
+	.navbar-nav > li {
+		a { 
+			text-transform: uppercase;
+			font-size: $font-size-base;
+			padding-left: 20px;
+			padding-right: 20px;
+		}
+		@include breakpoint(xs) {  }
+		@include breakpoint(xxs) {  }
+	}
+	.navbar-right:last-child {
+		margin-right: 0;
+	}
+	.navbar-collapse {
+		box-shadow: none;
+		@include breakpoint(xs) { 
+			text-align: center;
+			padding: 0 20px;
+			background-color: darken($bg-dark, 10%);
+			.navbar-right { 
+				margin: 0 !important;
+				padding: 20px 0; 
+			}
+			.active {
+				a, a:hover, a:focus {
+					background-color: $navbar-collapse-link-active-bg;
+				}
+			}		
+		}
+	}
+	@include breakpoint(xxs) { min-height: $navbar-height-small; }		
+}
+
+/* Navbar brand
+---------------------------- */
+.navbar-brand {
+	float: none;
+	padding: 0 15px;
+	height: $navbar-height;
+	@include vertical-align(middle);
+	@include breakpoint(xxs) {
+		height: $navbar-height-small;
+		.logo { 
+			height: 50px;
+			padding: 0 15px;
+		}		
+	}
+}
+
+/* Navbar dropdown item
+---------------------------- */
+.navbar-nav .dropdown {
+	.dropdown-menu {
+		font-size: $font-size-small;
+		border: 0;
+		left: 0;
+		right: auto;		
+		.divider { margin: 4px 0; }
+	}
+	.dropdown-toggle i { 
+		font-size: $font-size-small; 
+	}
+}
+
+/* Navbar plain
+---------------------------- */
+.navbar-plain { 
+	.navbar-header { 
+		float: none;
+		.navbar-brand {
+			display: block;
+			padding-top: 23px;
+			text-align: center;			
+		}
+	}
+}

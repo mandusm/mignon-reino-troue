@@ -1,0 +1,39 @@
+/* --------------------------------------------------
+ ## COMPONENT: RSVP
+-------------------------------------------------- */
+
+/* Rsvp form
+---------------------------- */
+.rsvp-form {
+	@extend .jumbotron;
+	box-shadow: 0 3px 3px rgba($gray-base, 0.2);
+	.submit-wrap {
+		position: absolute;
+		width: 100%;
+		text-align: center;
+		left: 0;
+		bottom: 0;
+		@include breakpoint(xs) {
+			bottom: -30px;
+		}		
+	}
+	@include breakpoint(xs) {
+		padding: $padding-section-small;
+		margin: $padding-section-small;
+	}
+	@include breakpoint(xxs) {
+		padding: 30px 30px 50px;
+		margin-left: -15px;
+		margin-right: -15px;
+		margin-top: 0;
+		border-radius: 0;
+	}	
+}
+
+/* Rsvp section
+---------------------------- */
+#rsvp.bg-parallax {
+	&:before {
+		background-color: transparent;
+	}
+}

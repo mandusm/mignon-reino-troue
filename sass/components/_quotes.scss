@@ -1,0 +1,36 @@
+/* --------------------------------------------------
+ ## COMPONENT: QUOTES
+-------------------------------------------------- */
+
+/* Quote item
+---------------------------- */
+.quote-item {
+	display: block;
+	width: 100%;
+	> blockquote {
+		border: 0 none;
+		color: $text-white;
+		font-size: $font-size-base*1.8;
+		text-align: center;
+		@include breakpoint(lg) {
+			padding: 0 10%;
+		}
+		@include breakpoint(xxs) {
+			font-size: 17px;
+			padding: 0 15px;
+			text-align: center;
+			line-height: 1.6;
+		}
+	}
+}
+
+/* Quote sign
+---------------------------- */
+.quote-sign {
+	@extend .img-responsive, .center-block;
+	margin-bottom: $padding-section-small;
+	@include breakpoint(xxs) {
+		width: 60px;
+		margin-bottom: 30px;
+	}	
+}

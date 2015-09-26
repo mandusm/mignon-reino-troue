@@ -1,0 +1,40 @@
+/* --------------------------------------------------
+ ## LAYOUT: HEADER
+-------------------------------------------------- */
+
+/* Page header 
+---------------------------- */
+header.page-header {
+	margin: $navbar-height 0 0;
+	padding-bottom: 0;
+	@include background-image('../images/header/page_header_bg.jpg');
+	background-size: cover;
+	@include breakpoint(xxs) { margin-top: $navbar-height-small; }	
+}
+
+/* Home header
+---------------------------- */
+header.home-header {
+	margin-top: $navbar-height;
+	.header-content {
+		padding-top: 25%;
+		padding-bottom: 25%;
+	}
+	.header-title {
+		margin: 0;
+		font-size: $font-size-h1*2;
+		@include breakpoint(xxs) {
+			font-size: 28px;
+		}		
+	}
+	.header-desc {
+		@extend .text-uppercase, .text-white;
+		font-size: $font-size-h4;
+		letter-spacing: 4px;
+		@include breakpoint(xxs) {
+			font-size: 12px !important;
+			text-align: center;
+		}		 
+	}
+	@include breakpoint(xxs) { margin-top: $navbar-height-small; }
+}

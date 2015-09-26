@@ -1,0 +1,52 @@
+/* --------------------------------------------------
+ ## COMPONENT: COUNTDOWN
+-------------------------------------------------- */
+
+/* Countdown section
+---------------------------- */
+#countdown {
+	@include breakpoint(xxs) {
+		padding-top: 25px;
+		padding-bottom: 25px;
+	}
+}
+
+/* Countdown wrap
+---------------------------- */
+.countdown {
+	@extend .text-center;
+}
+
+/* Countdown item
+---------------------------- */
+.countdown-item {
+	@include breakpoint(xxs) {
+		width: 50%; 
+	}
+}
+
+/* Countdown time
+---------------------------- */
+.countdown-time { 
+	@extend .h1;
+	font-size: $font-size-h1*2;
+	color: $brand-primary;
+	text-align: center;
+	height: 80px;
+	margin: 0;
+	@include breakpoint(xxs) {
+		font-size: 50px;
+		margin-bottom: -25px;
+	}	
+}
+
+/* Countdown label
+---------------------------- */
+.countdown-label {
+	@extend .text-uppercase;
+	display: block;	
+	letter-spacing: 2px;
+	@include breakpoint(xxs) {
+		font-size: 12px;
+	}		
+}

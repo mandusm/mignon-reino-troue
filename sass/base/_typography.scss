@@ -1,0 +1,164 @@
+/* --------------------------------------------------
+ ## BASE: TYPOGRAPHY
+-------------------------------------------------- */
+
+/* Init webfonts
+---------------------------- */
+$web-fonts-protocol: "https";
+@include web-fonts(("Open Sans": ("400", "300")));
+@include web-fonts(("Cantata One": ("400", "700")));
+
+/* Text colors
+---------------------------- */
+.text-base { color: $text-color; }
+
+.text-color { color: $brand-primary; }
+
+.text-white { color: $text-white; }
+
+.text-dark { color: $text-dark; }
+
+.text-success { color: $text-success; }
+
+.text-info { color: $text-info; }
+
+.text-warning { color: $text-warning; }
+
+.text-danger { color: $text-danger; }
+
+/* Word wrap
+---------------------------- */
+.nowrap { white-space: nowrap; }
+
+/* Headings
+---------------------------- */
+h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
+	text-transform: uppercase;
+	> small {
+		font-family: $font-family-sans-serif;
+		font-size: 50%;
+		display: block;
+		line-height: 2;
+	}
+	> a { @include transition(0.25s); }	
+}
+
+h1, .h1 {
+	font-size: $font-size-h1;
+	> small { letter-spacing: 9px; }
+	@include breakpoint(xxs) {
+		font-size: 24px;
+	}
+}
+
+h2, .h2 {
+	font-size: $font-size-h2;
+	> small { letter-spacing: 8px; } 
+	@include breakpoint(xxs) {
+		font-size: 22px;
+	}	
+}
+
+h3, .h3 {
+	font-size: $font-size-h3;
+	> small { letter-spacing: 7px; } 
+	@include breakpoint(xxs) {
+		font-size: 20px;
+	}	
+}
+
+h4, .h4 {
+	font-size: $font-size-h4;
+	> small { letter-spacing: 6px; } 
+	@include breakpoint(xxs) {
+		font-size: 18px;
+	}	
+}
+
+h5, .h5 {
+	font-size: $font-size-h5;
+	> small { letter-spacing: 5px; } 
+	@include breakpoint(xxs) {
+		font-size: 16px;
+	}	
+}
+
+h6, .h6 {
+	font-size: $font-size-h6;
+	> small { letter-spacing: 4px; } 
+	@include breakpoint(xxs) {
+		font-size: 14px;
+	}	
+}
+
+/* Lead
+---------------------------- */
+.lead {
+	font-size: $font-size-large;
+	font-weight: $font-weight-base;	
+	text-align: center;
+	line-height: 2;
+	@include breakpoint(lg) {
+		padding: 0 10%;		
+	}
+	@include breakpoint(xxs) {
+		text-align: justify;	
+	}
+}
+
+/* Basic paragraphs
+---------------------------- */
+p {
+	@include breakpoint(xxs) {
+		font-size: 13px !important;
+		text-align: justify;
+	}
+}
+
+/* Blockquote
+---------------------------- */
+blockquote {
+	font-family: $font-family-serif;
+	font-style: italic;
+	color: $text-muted;
+}
+
+/* Dropcaps
+---------------------------- */
+.dropcap {
+	float: left;
+	color: $brand-primary;
+	font-family: $headings-font-family;
+	font-size: 45px;
+	width: 50px;		
+	height: 45px;
+	line-height: 50px;
+	margin: 15px 10px 0 0;
+	text-align: center;
+	vertical-align: middle;
+}
+
+/* Section title
+---------------------------- */
+.section-title {
+	text-align: center;
+}
+
+/* Page title
+---------------------------- */
+.page-title {
+	color: $color-white;
+	margin: 30px 0;
+	font-size: 46px;
+	letter-spacing: -2px;
+}
+
+/* Size helper
+---------------------------- */
+.font-large { font-size: $font-size-large; }
+
+.font-small { font-size: $font-size-small; }
+
+/* Emphasizing
+---------------------------- */
+.strong, strong  { color: $text-dark; }

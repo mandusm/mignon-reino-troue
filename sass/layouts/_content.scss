@@ -1,0 +1,78 @@
+/* --------------------------------------------------
+ ## LAYOUT: CONTENT
+-------------------------------------------------- */
+
+/* Main content
+---------------------------- */
+.content[role="main"] {
+	overflow: hidden;
+	position: relative;
+	z-index: 10;
+}
+
+/* Section spacings
+---------------------------- */
+section, .section {
+	padding: $padding-section-base 0;
+	overflow: hidden;
+	&.padding-lg { padding: $padding-section-large 0; }
+	&.padding-sm { padding: $padding-section-small 0; }
+	&.padding-xs { padding: $padding-section-tiny  0; }
+	@include breakpoint(xxs) {
+		padding: $padding-section-small 0;
+	}	
+}
+
+/* Section backgrounds
+---------------------------- */
+.bg-white	 { background: $bg-white; }
+.bg-dark 	 { background: $bg-dark; }
+.bg-light 	 { background: $bg-light; }
+.bg-shiney 	 { background: $bg-shiney; }
+.bg-primary  { background: $bg-primary; }
+
+.bg-image 	 { @include bg-image(); }
+.bg-parallax {
+	position: relative;
+	&:before {
+		background-color: rgba($bg-primary, 0.85);
+		@include bg-parallax-overlay();
+	}		
+}
+
+/* Section header
+---------------------------- */
+.section-header {
+	@extend .row;	
+	text-align: center;
+	&.text-left { text-align: left; }
+	&.text-right { text-align: right; }
+	position: relative;
+	margin: 0 0 $padding-section-small;
+	.section-title { 
+		@extend .h1;
+		margin: 0;
+		@include breakpoint(xxs) {
+			font-size: 24px;
+		}		
+	}
+	.section-lead {
+		font-size: $font-size-large;
+		color: $text-muted;
+	}
+	@include breakpoint(xxs) {
+		margin-bottom: 25px;
+	}	
+}
+
+/* Section footer
+---------------------------- */
+.section-footer {
+	padding: $padding-section-tiny 0 $padding-section-small;
+	margin-top: $padding-section-small;
+	.btn.btn-lg { margin-top: -80px; }
+	@include breakpoint(xxs) {
+		margin-top: 30px;
+	}	
+}
+

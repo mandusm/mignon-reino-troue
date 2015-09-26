@@ -1,0 +1,193 @@
+/* --------------------------------------------------
+ ## MIXINS
+-------------------------------------------------- */
+
+// BREAKPOINT = Used for responsive breakpoints
+// --------------------------------------------------
+@mixin breakpoint($media) {
+  @if $media == xxs {
+      @media (max-width: 480px) { @content; }
+  }
+  @else if $media == xs {
+      @media (max-width: 767px) { @content; }
+  }
+  @else if $media == sm {
+      @media (min-width: 768px) and (max-width: 979px) { @content; }
+  }
+  @else if $media == md {
+      @media (min-width: 980px) and (max-width: 1199px) { @content; }
+  }    
+  @else if $media == lg {
+      @media (min-width: 1200px) { @content; }
+  }
+  @else {
+      @media only screen and (max-width: #{$media}px) { @content; }
+  }
+}
+
+// BACKGROUND-IMAGE = Static bg image
+// --------------------------------------------------
+@mixin background-image($url) {
+  background-image: url($url);
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+  background-position: inherit;
+  background-color: transparent;
+}
+
+// BG-IMAGE = Full size bg image
+// --------------------------------------------------
+@mixin bg-image() { 
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+  background-position: inherit;
+}
+
+// BG-PARALLAX = Parallax scroll bg image
+// --------------------------------------------------
+@mixin bg-parallax($url) { 
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  background-color: transparent;  
+  background-attachment: fixed;
+  background-image: url($url);
+  @include breakpoint(sm) {
+    background-attachment: scroll;
+  }
+}
+
+// BG-PARALLAX-OVERLAY = Parallax scroll bg image overlay
+// --------------------------------------------------
+@mixin bg-parallax-overlay(){
+  content: "";
+  height: 100%;
+  left: 0; top: 0;
+  position: absolute;
+  width: 100%;
+  z-index: 0;  
+}
+
+// BORDER-RADIUS = Rounding borders
+// --------------------------------------------------
+@mixin border-radius($a, $b, $c, $d) { 
+  border-radius: $a $b $c $d;
+  -webkit-border-radius: $a $b $c $d;
+}
+
+// VERTICAL-ALIGN = Position vertical align
+// --------------------------------------------------
+@mixin vertical-align($valign) {
+  float: none;  
+  display: table-cell;
+  vertical-align: $valign;
+}
+
+// IMG-RESPONSIVE = Responsive image mixin
+// --------------------------------------------------
+@mixin img-responsive() {
+  display: block;
+  height: auto;
+  max-width: 100%;
+  width: 100%;
+}
+
+// POSITION-ABSOLUTE = Absolute pos mixin for overlays
+// --------------------------------------------------
+@mixin position-absolute($index) {
+  position: absolute;
+  z-index: $index;  
+  left: 0; top: 0;
+}
+
+// OPACITY = Cross browser opacity mixin
+// --------------------------------------------------
+@mixin opacity($opacity) {
+  opacity: $opacity;
+  $opacity-ie: $opacity * 100;
+  filter: alpha(opacity=$opacity-ie); //IE8
+}
+
+// ANIMATION-DELAY = Cross browser animation delay
+// --------------------------------------------------
+@mixin animation-delay($sec) {
+  -webkit-animation-delay: $sec;
+  -moz-animation-delay: $sec;
+  -ms-animation-delay: $sec;
+  -o-animation-delay: $sec;
+  animation-delay: $sec;
+}
+
+// ANIMATION-DURATION = Cross browser animation duration
+// --------------------------------------------------
+@mixin animation-duration($sec) {
+  -webkit-animation-duration: $sec;
+  -moz-animation-duration: $sec;
+  -ms-animation-duration: $sec;
+  -o-animation-duration: $sec;
+  animation-duration: $sec;
+}
+
+// TRANSITION = Cross browser transition ease
+// --------------------------------------------------
+@mixin transition($sec) {
+  -webkit-transition: all $sec ease-in-out;
+  -moz-transition: all $sec ease-in-out;
+  -ms-transition: all $sec ease-in-out;
+  -o-transition: all $sec ease-in-out;
+  transition: all $sec ease-in-out;
+}
+
+// SCALE = Cross browser scale transform
+// --------------------------------------------------
+@mixin scale($val) {
+  -webkit-transform: scale($val);
+  -moz-transform: scale($val);
+  -ms-transform: scale($val);
+  -o-transform: scale($val);
+  transform: scale($val);
+}
+
+// TRANSLATEY = Cross browser translateY transform
+// --------------------------------------------------
+@mixin translateY($val) {
+  -webkit-transform: translateY($val);
+  -moz-transform: translateY($val);
+  -ms-transform: translateY($val);
+  -o-transform: translateY($val);
+  transform: translateY($val);
+}
+
+// ROTATEY = Cross browser rotateY transform
+// --------------------------------------------------
+@mixin rotateY($val) {
+  -webkit-transform: rotateY($val);
+  -moz-transform: rotateY($val);
+  -ms-transform: rotateY($val);
+  -o-transform: rotateY($val);
+  transform: rotateY($val);
+}
+
+// CHILDRENS = Helpers for targeting childs
+// --------------------------------------------------
+@mixin last-child {
+  &:last-child { @content; }
+  &.last-child { @content; }
+}
+
+@mixin first-child {
+  &:first-child { @content; }
+  &.first-child { @content; }
+}
+
+@mixin nth-child-even {
+  &:nth-child(even) { @content; }
+  &.nth-child-even { @content; }
+}
+
+@mixin nth-child-odd {
+  &:nth-child(odd) { @content; }
+  &.nth-child-odd { @content; }
+}
+
+

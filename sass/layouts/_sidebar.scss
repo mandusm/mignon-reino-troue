@@ -1,0 +1,32 @@
+/* --------------------------------------------------
+ ## LAYOUT: SIDEBAR
+-------------------------------------------------- */
+
+/* Sidebar nav
+---------------------------- */
+.side-nav {
+	@extend .hidden-sm; 
+	@extend .hidden-xs;
+	padding-left: 0;
+	padding-top: $padding-section-base;
+	ul, li { 
+		list-style: none;
+		padding-left: 0;
+		&.active {
+			border: 0 #eee solid;
+			border-right-width: 5px;
+		}
+	}
+	&.affix-top {
+	    position: static;
+	  	margin-top: $padding-section-tiny;
+	  	width: 228px;			
+	}
+	&.affix {
+		position: fixed;
+		top: 0;
+	  	width: 228px;			
+	}
+}
+
+.affix-top, .affix{ position: static; }

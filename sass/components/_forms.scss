@@ -1,0 +1,84 @@
+/* --------------------------------------------------
+ ## COMPONENT: FORMS
+-------------------------------------------------- */
+
+/* Form group
+---------------------------- */
+.form-group {
+	margin-bottom: 15px;
+	@include breakpoint(xxs){ margin-bottom: 12px; }
+}
+
+/* Form control
+---------------------------- */
+.form-control {
+	padding: 14px 18px;
+	height: auto;
+	box-shadow: none;
+	-webkit-appearance: none;
+	@include transition(0.1s);
+	&:focus {
+		border-color: #eee;
+		box-shadow: 0 0 0 2px rgba($gray-base, 0.04);
+		outline: 0 none;
+	}
+	&.input-lg {
+		padding: 16px 20px;
+		font-size: $font-size-large;
+	}  
+	&.input-sm {
+		padding: 12px 16px;
+		font-size: $font-size-small;
+	}
+	&.input-xs {
+		padding: 10px 14px;
+		font-size: $font-size-small;    
+	}  
+}
+
+/* Select fix
+---------------------------- */
+.select-fix {
+	@extend .clearfix;
+	margin-bottom: 0;
+	width: 100%;
+	.dropdown-toggle {
+		text-align: left;
+		> i {
+			position: absolute;
+			right: 20px; 
+			top: 20px;
+		}    
+	}
+	&.open {
+		.dropdown-toggle {
+			@extend .form-control:focus;
+		}
+	}
+	.placeholder {
+		color: #ccc;
+	}
+}
+
+
+/* Validation blocks
+---------------------------- */
+.help-block.with-errors {
+	text-align: right;
+	padding-right: 12px;
+	font-size: 16px;
+	@include breakpoint(xs){ 
+		text-align: center;
+		padding: 0;
+	}
+}
+
+.has-error {
+	.control-label {
+		color: inherit;
+	}
+}
+
+.control-label {
+	color: $text-dark;
+}

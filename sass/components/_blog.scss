@@ -1,0 +1,84 @@
+/* --------------------------------------------------
+ ## COMPONENT: BLOG
+-------------------------------------------------- */
+
+/* Blog wrap
+---------------------------- */
+.blog-wrap {
+	padding: 15px;
+	@include breakpoint(sm)  { padding: 0; }
+	@include breakpoint(xs)  { padding: $padding-section-base; }
+	@include breakpoint(xxs) { padding: $padding-section-tiny; }
+}
+
+/* Blog item
+---------------------------- */
+.blog-item {
+	@extend .panel, .text-center;
+	padding: 0; margin: 0;
+	border-radius: 50%;
+	overflow: hidden;
+	position: relative;
+	&:hover {
+		.blog-image {
+			@include opacity(0.3);
+		}
+		.blog-body {
+			@include opacity(1.0);
+			@include scale(1.0);
+		}
+	}
+}
+
+/* Blog body
+---------------------------- */
+.blog-body {
+	background: $bg-white;
+	display: block;
+	padding: $padding-section-tiny;
+	left: 10%; top: 10%;
+	position: absolute;
+	width: 80%;
+	height: 80%;
+	overflow: hidden;
+	border-radius: 50%;
+	@include transition(0.3s);
+	@include opacity(0.0);
+	@include scale(1.3);
+}
+
+/* Blog title
+---------------------------- */
+.blog-title {
+	@extend .no-mg;
+	padding-top: 40%;
+	> small {
+		color: $text-muted;
+		margin-top: 10px;
+	}
+	.icon-link {
+		@extend .hidden-lg, .hidden-md, .hidden-xs, .visible-xxs;
+		color: $text-muted;
+		&:hover {
+			color: $brand-primary;
+		}		
+	}
+	.text-link {
+		@extend .hidden-sm, .hidden-xxs;
+	}
+	@include breakpoint(xs) { font-size: $font-size-h3; }
+	@include breakpoint(xxs) { padding-top: 30%; }	
+}
+
+/* Blog head
+---------------------------- */
+.blog-head {
+	background-color: $bg-primary;
+}
+
+/* Blog image
+---------------------------- */
+.blog-image {
+	@extend .img-responsive;
+	@include transition(0.15s);
+}

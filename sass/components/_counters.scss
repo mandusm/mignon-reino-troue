@@ -1,0 +1,33 @@
+/* --------------------------------------------------
+ ## COMPONENT: COUNTERS
+-------------------------------------------------- */
+
+/* Counter item
+---------------------------- */
+.counter-item {
+	text-align: center;
+	.counter-value {
+		@extend .h2;
+		color: $text-white;
+		font-size: 4em;
+		line-height: 1em;		
+		margin: 0;	
+		@include breakpoint(xxs){
+			font-size: 38px !important;
+			text-align: center !important;
+		}
+	}
+	.counter-desc {
+		color: rgba($text-white, 0.7);
+		margin-bottom: 0;
+		text-transform: uppercase;
+		@include breakpoint(xxs){
+			text-align: center;
+		}		
+	}
+	@include breakpoint(xxs){
+		display: block;
+		width: 50%;
+		margin: 20px 0;
+	}
+}

@@ -1,0 +1,86 @@
+/* --------------------------------------------------
+ ## COMPONENT: EVENTS
+-------------------------------------------------- */
+
+/* Event wrap
+---------------------------- */
+.event-wrap {
+	padding: $padding-section-small;
+	@include breakpoint(md) {
+		padding: $padding-section-tiny;
+	}
+	@include breakpoint(xxs) {
+		padding: 0 15px;
+	}
+}
+
+/* Event item
+---------------------------- */
+.event-item {
+	@extend .panel, .text-center;
+	padding: 0;
+	border-radius: $border-radius-small;
+	overflow: hidden;
+}
+
+/* Event header
+---------------------------- */
+.event-head {
+	@extend .panel-heading;
+	padding: 0; border: 0;
+	background-color: $brand-primary;
+	overflow: hidden;
+	img { @include transition(0.25s); }
+	&:hover {
+		img {
+			@include opacity(0.2);
+		}
+	}
+}
+
+/* Event link
+---------------------------- */
+.event-link {
+	position: relative;
+	overflow: hidden;
+	> i {
+		@extend .hidden-sm;
+		@include translateY(20px);
+		@include transition(0.25s);
+		position: absolute;
+		color: $text-white;
+		font-size: 25px;
+		height: 30px;
+		width: 30px;
+		margin-left: -15px;
+		margin-top: -15px;
+		@include breakpoint(xxs) {
+			display: none;
+		}				
+	}
+	&:hover {
+		> i {
+			@include translateY(-100px);
+		}
+	}
+}
+
+/* Event body
+---------------------------- */
+.event-body {
+	@extend .panel-body;
+	@include breakpoint(xxs) {
+		.event-title {
+			margin: 15px 0;
+		}
+		padding: 0;
+	}
+}
+
+/* Event footer
+---------------------------- */
+.event-foot {
+	@extend .panel-footer;
+	background: transparent;
+	border: 0;
+}

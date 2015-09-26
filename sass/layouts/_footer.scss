@@ -1,0 +1,131 @@
+/* --------------------------------------------------
+ ## LAYOUT: FOOTER
+-------------------------------------------------- */
+
+/* Footer widgetized
+---------------------------- */
+.footer-widgets {
+	background-color: $bg-dark;
+	padding: $padding-section-small 0;
+	.widget-title {
+		@extend .h5;		
+		color: $text-dark;
+		margin-bottom: $padding-section-tiny;
+	}
+	.footer-widget {
+		a { color: $text-white; }
+		.links li {
+			padding: 3px 0;
+			display: block;
+		}
+		.footer-logo {
+			@extend .img-responsive;
+		}
+		@include breakpoint(971) {
+			margin: 0 ;
+			border-bottom: 1px dashed $text-dark;
+			padding: $padding-section-tiny 0;			
+		}
+		@include breakpoint(xs) {
+			text-align: center;
+			.footer-logo {
+				margin-left: auto;
+				margin-right: auto;
+				display: block;
+			}
+			padding: $padding-section-tiny;			
+		}
+		@include breakpoint(xxs) {
+			p.pd-r-md { padding-right: 0; }		
+		}		
+		@include last-child() {
+			border-bottom: 0;
+		}
+	}
+	@include breakpoint(xxs) {
+		padding: 10px 0;
+	}	
+}
+
+/* Footer copyright
+---------------------------- */
+.footer-copyright {	
+	background-color: $bg-primary;
+	padding: 0;
+	.footer-nav {
+		@extend .no-mg, .pd-t, .text-right;
+		> a { 
+			color: $text-white;
+			font-size: $font-size-small;
+			text-transform: uppercase;
+			margin-left: 15px;
+		}
+	}
+	.block-socials {
+		a {
+			color: $text-white;
+			@include opacity(0.6);	
+			display: block;
+			float: left;
+			width: 70px;
+			height: 70px;
+			line-height: 70px;
+			text-align: center;
+			&:hover {
+				font-size: 18px;
+				@include opacity(1);		
+			}
+			@include breakpoint(xs) {
+				display: inline-block;
+				text-align: center;
+				float: none;
+			}
+		}
+		@include breakpoint(xs) { text-align: center; }
+	}
+	.copyright-text {
+		> p {
+			@extend .no-mg, .pd-t, .pd-b, .text-uppercase;
+			@include breakpoint(xxs) {
+				text-align: center;
+			}
+		}
+		@include breakpoint(971) {
+			text-align: center;
+		}
+	}
+	.socials-facebook:hover {  background-color: #507CBE }
+
+	.socials-twitter:hover {  background-color: #2287B3 }
+
+	.socials-linkedin:hover {  background-color: #02527B }
+
+	.socials-behance:hover {  background-color: #111111 }
+
+	.socials-pinterest:hover {  background-color: #F16261 }
+
+	.socials-dribbble:hover {  background-color: #D97AA6 }
+
+	.socials-css3:hover {  background-color: #007BC6 }
+
+	.socials-html5:hover {  background-color: #FF5116 }
+
+	.socials-youtube:hover {  background-color: #F16261 }
+
+	.socials-gplus:hover {  background-color: #4D4F54 }
+
+	.socials-tumblr:hover {  background-color: #4D7EA3 }
+
+	.socials-rss:hover {  background-color: #C14921 }
+
+	.socials-envato:hover {  background-color: #9ACD6B }
+
+	.socials-dropbox:hover {  background-color: #81B441 }
+
+	.socials-skype:hover {  background-color: #36C4F3 }
+
+	.socials-flickr:hover {  background-color: #EEEFEF }
+}
+
+
+
